@@ -9,7 +9,9 @@ public class Duke {
                 + "|____/ \\__,_|_|\\_\\___|\n";
         System.out.println("Hello from\n" + logo);
 
+        String[] texts = new String[100];
         String line;
+        int NumberOfTexts = 0;
         Scanner in = new Scanner(System.in);
 
         System.out.println("_______________________________________________");
@@ -19,8 +21,15 @@ public class Duke {
 
         do{
             line = in.nextLine();
-            if(!line.equals("bye")) {
-                System.out.println(line);
+            if(!line.equals("bye") && !line.equals("list")){
+                System.out.println("added: " + line + "\n");
+                texts[NumberOfTexts] = line;
+                NumberOfTexts++;
+            }
+            if(line.equals("list")){
+                for(int i = 0; i < NumberOfTexts; i++){
+                    System.out.println(i+1 + ". " + texts[i]);
+                }
             }
 
         }while(!line.equals("bye"));
