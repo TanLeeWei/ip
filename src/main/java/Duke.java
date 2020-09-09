@@ -1,4 +1,3 @@
-//TanLeeWei
 
 import java.util.Scanner;
 
