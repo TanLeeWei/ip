@@ -7,18 +7,15 @@ public class Task {
         this.isDone = false;
     }
 
-    public String getStatusIcon(){
-
+    public String getStatusIcon() {
         return (isDone ? "\u2713" : "\u2718");
     }
 
-    public void markAsDone(){
-
+    public void markAsDone() {
         isDone = true;
     }
 
-    public String toString(){
-
+    public String toString() {
         return this.description;
     }
 }
