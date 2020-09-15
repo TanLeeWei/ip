@@ -1,7 +1,9 @@
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Duke {
+    private static ArrayList<Task> tasks = new ArrayList<>();
     public static void main(String[] args) {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -10,7 +12,7 @@ public class Duke {
                 + "|____/ \\__,_|_|\\_\\___|\n";
         System.out.println("Hello from\n" + logo);
 
-        Task[] texts = new Task[100];
+        //Task[] texts = new Task[100];
         String commands;
         String line = "____________________________________________________________";
         int numberOfTexts = 0;
@@ -31,7 +33,7 @@ public class Duke {
                         System.out.println(line);
                         System.out.println("Here are the tasks in your list:");
                         for (int i = 0; i < numberOfTexts; i++) {
-                            System.out.println(i + 1 + "." + texts[i]);
+                            System.out.println(i + 1 + "." + tasks.get(i));
                         }
                         System.out.println("\n" + line);
                         break;
@@ -40,7 +42,8 @@ public class Duke {
                         if(splitString[1].isEmpty()){
                             throw new ArrayIndexOutOfBoundsException();
                         }
-                        texts[numberOfTexts] = todo;
+                        //texts[numberOfTexts] = todo;
+                        tasks.add(todo);
                         numberOfTexts++;
                         System.out.println(line);
                         System.out.println("Got it. I've added this task");
@@ -51,7 +54,8 @@ public class Duke {
                     case "deadline":
                         Deadline deadline = new Deadline(splitString[1]);
                         deadline.setBy(splitString[1]);
-                        texts[numberOfTexts] = deadline;
+                        //texts[numberOfTexts] = deadline;
+                        tasks.add(deadline);
                         numberOfTexts++;
                         System.out.println(line);
                         System.out.println("Got it. I've added this task");
@@ -62,7 +66,8 @@ public class Duke {
                     case "event":
                         Event event = new Event(splitString[1]);
                         event.setWhen(splitString[1]);
-                        texts[numberOfTexts] = event;
+                        //texts[numberOfTexts] = event;
+                        tasks.add(event);
                         numberOfTexts++;
                         System.out.println(line);
                         System.out.println("Got it. I've added this task");
@@ -72,12 +77,23 @@ public class Duke {
                         break;
                     case "done":
                         textNumber = Integer.parseInt(splitString[1]) - 1;
-                        texts[textNumber].markAsDone();
+                        //texts[textNumber].markAsDone();
+                        tasks.get(textNumber).markAsDone();
                         System.out.println(line);
                         System.out.println("Nice! I've marked this task as done:");
-                        System.out.println(texts[textNumber]);
+                        System.out.println(tasks.get(textNumber));
                         System.out.println("\n" + line);
                         break;
+                    case "delete":
+                        textNumber = Integer.parseInt(splitString[1]) - 1;
+                        numberOfTexts--;
+                        System.out.println(line);
+                        System.out.println("Noted. I've removed this task:");
+                        System.out.println(tasks.get(textNumber));
+                        System.out.println("Now you have " + numberOfTexts + " tasks in the list.");
+                        System.out.println("\n" + line);
+                        tasks.remove(textNumber);
+
                     case "bye":
                         break;
                     default:
@@ -89,7 +105,7 @@ public class Duke {
                 System.out.println("\n" + line);
             } catch (InvalidCommandException exception) {
                 System.out.println(line);
-                System.out.println("OPPS!!! I'm sorry, but I don;t know what that means :-(");
+                System.out.println("OPPS!!! I'm sorry, but I don't know what that means :-(");
                 System.out.println("\n" + line);
             }
 
