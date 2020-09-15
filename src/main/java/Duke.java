@@ -12,7 +12,6 @@ public class Duke {
                 + "|____/ \\__,_|_|\\_\\___|\n";
         System.out.println("Hello from\n" + logo);
 
-        //Task[] texts = new Task[100];
         String commands;
         String line = "____________________________________________________________";
         int numberOfTexts = 0;
@@ -42,7 +41,6 @@ public class Duke {
                         if(splitString[1].isEmpty()){
                             throw new ArrayIndexOutOfBoundsException();
                         }
-                        //texts[numberOfTexts] = todo;
                         tasks.add(todo);
                         numberOfTexts++;
                         System.out.println(line);
@@ -54,7 +52,6 @@ public class Duke {
                     case "deadline":
                         Deadline deadline = new Deadline(splitString[1]);
                         deadline.setBy(splitString[1]);
-                        //texts[numberOfTexts] = deadline;
                         tasks.add(deadline);
                         numberOfTexts++;
                         System.out.println(line);
@@ -66,7 +63,6 @@ public class Duke {
                     case "event":
                         Event event = new Event(splitString[1]);
                         event.setWhen(splitString[1]);
-                        //texts[numberOfTexts] = event;
                         tasks.add(event);
                         numberOfTexts++;
                         System.out.println(line);
@@ -77,7 +73,6 @@ public class Duke {
                         break;
                     case "done":
                         textNumber = Integer.parseInt(splitString[1]) - 1;
-                        //texts[textNumber].markAsDone();
                         tasks.get(textNumber).markAsDone();
                         System.out.println(line);
                         System.out.println("Nice! I've marked this task as done:");
@@ -93,7 +88,7 @@ public class Duke {
                         System.out.println("Now you have " + numberOfTexts + " tasks in the list.");
                         System.out.println("\n" + line);
                         tasks.remove(textNumber);
-
+                        break;
                     case "bye":
                         break;
                     default:
