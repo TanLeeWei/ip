@@ -4,6 +4,7 @@ public class Deadline extends Task {
 
     public Deadline(String description) {
         super(description);
+        super.typeOfTask = "[D]";
     }
 
     public void setBy(String description) {
@@ -19,7 +20,7 @@ public class Deadline extends Task {
     }
 
     public String toString() {
-        return "[D]" + "[" + super.getStatusIcon() + "] " + this.description + "(" + this.by + ")";
+        return super.typeOfTask + "[" + super.getStatusIcon() + "] " + this.description + "(" + this.by + ")";
     }
 
 }

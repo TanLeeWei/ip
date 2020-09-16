@@ -1,0 +1,3 @@
+1|[E][✓] have fun (at: Sunday 2-4)
+1|[D][✓] eating (by: sunday 2359)
+1|[T][✓] go libray

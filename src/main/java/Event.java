@@ -4,6 +4,7 @@ public class Event extends Task {
 
     public Event(String description) {
         super(description);
+        super.typeOfTask = "[E]";
     }
 
     public void setWhen(String description) {
@@ -20,7 +21,7 @@ public class Event extends Task {
 
     public String toString() {
 
-        return "[E]" + "[" + super.getStatusIcon() + "] " + this.description + "(" + this.when + ")";
+        return super.getTypeOfTask() + "[" + super.getStatusIcon() + "] " + this.description + "(" + this.when + ")";
     }
 
 }
