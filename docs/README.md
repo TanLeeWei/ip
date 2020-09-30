@@ -2,6 +2,19 @@
 
 Duke Project is an application that allows the user to record, manage and keep track the tasks they have. If you can type fast, Duke can help to make their tasks management more effectively
 
+## Quick Start
+1. Ensure that you have Java 11 or above version installed on your computer.
+
+1. Download the latest duke.jar file from github.
+
+1. Copy the file to a folder that you want run on as the home folder.
+
+1. Run the duke program on cmd or terminal and the enter the directory holding the duke.jar.
+
+1. Run the command java -jar duke.jar to start the program.
+
+1. Refer to the Features below for details of each command.
+
 ## Features
 ```
 - Items in square brackets are optional e.g: deadline borrow book /by 2020-12-12 [23:59]
