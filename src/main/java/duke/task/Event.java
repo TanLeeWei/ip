@@ -1,3 +1,7 @@
+package duke.task;
+
+import duke.task.Task;
+
 public class Event extends Task {
 
     protected String when;
@@ -13,6 +17,10 @@ public class Event extends Task {
         this.description = arrayOfString[0];
         arrayOfString = when.split(" ", 2);
         when = arrayOfString[0] + ": " + arrayOfString[1];
+    }
+
+    public void assignWhen(String newWhen) {
+        when = newWhen;
     }
 
     public String getWhen() {
