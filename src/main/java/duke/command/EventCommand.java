@@ -2,6 +2,9 @@ package duke.command;
 
 import duke.task.Event;
 
+/**
+ * Add event into Task List
+ */
 public class EventCommand extends Commands {
 
     public final String input;
@@ -25,6 +28,7 @@ public class EventCommand extends Commands {
             System.out.println("\n" + line);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Incorrect format for event input");
+            System.out.println("\n" + line);
         }
     }
 

@@ -1,5 +1,8 @@
 package duke.command;
 
+/**
+ * Delete a task from the Task List
+ */
 public class DeleteCommand extends Commands {
 
     public int index;
@@ -29,8 +32,11 @@ public class DeleteCommand extends Commands {
             }
         } catch (IndexOutOfBoundsException e) {
             System.out.println("The index cannot be found. Please check the list and try again");
+            System.out.println("\n" + line);
+
         } catch (NumberFormatException e) {
             System.out.println("The input has to be an integer or all");
+            System.out.println("\n" + line);
         }
     }
 

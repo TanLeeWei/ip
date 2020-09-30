@@ -3,6 +3,9 @@ package duke.command;
 import duke.task.Task;
 import java.util.ArrayList;
 
+/**
+ * Find a task according to keyword given by user
+ */
 public class FindCommand extends Commands {
 
     public final String input;

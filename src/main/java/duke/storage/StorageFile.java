@@ -8,9 +8,14 @@ import duke.task.TaskList;
 import java.io.*;
 import java.util.Scanner;
 
+/**
+ * Represent thefile to store the Task data
+ */
 public class StorageFile {
 
+    /** Default file name if the user did not provide file name.*/
     private static String filePath = "data/duke.txt";
+
     private static TaskList tasksList;
     private static String line;
 
@@ -19,6 +24,10 @@ public class StorageFile {
         this.tasksList = tasksList;
     }
 
+    /**
+     * Load the file when the user start the program
+     * @return all the task from the previous usage
+     */
     public static TaskList readFile(){
         try{
             File myFile = new File(filePath);
@@ -64,6 +73,9 @@ public class StorageFile {
         return tasksList;
     }
 
+    /**
+     * Create the file to store all the tasks
+     */
     public static void CreateFile(String filePath) {
         try {
             File myObj = new File(filePath);
@@ -82,6 +94,9 @@ public class StorageFile {
         }
     }
 
+    /**
+     * Empty the file for saving purposes
+     */
     public static void ClearFile(String filePath) {
         try {
             PrintWriter writer = new PrintWriter(filePath);
@@ -92,6 +107,9 @@ public class StorageFile {
         }
     }
 
+    /**
+     * Save all the task into the file after each user input
+     */
     public static void writeToFile() {
         try {
             ClearFile(filePath);

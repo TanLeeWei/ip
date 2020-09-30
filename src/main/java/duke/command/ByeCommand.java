@@ -1,5 +1,8 @@
 package duke.command;
 
+/**
+ * Print goodbye message when the user input is bye
+ */
 public class ByeCommand extends Commands{
 
     String line;

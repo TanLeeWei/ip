@@ -1,5 +1,8 @@
 package duke.command;
 
+/**
+ * Return a error message when the user input is invalid
+ */
 public class InvalidCommand extends Commands{
 
     public final String line;

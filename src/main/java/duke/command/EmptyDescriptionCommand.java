@@ -1,5 +1,8 @@
 package duke.command;
 
+/**
+ * Return a error message when the user input's description is empty
+ */
 public class EmptyDescriptionCommand extends Commands {
 
     public final String line;

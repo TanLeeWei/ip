@@ -3,6 +3,10 @@ package duke.command;
 import duke.task.Deadline;
 import java.time.format.DateTimeParseException;
 
+/**
+ * Add deadline into Tasks List.
+ * The accepted format of deadline is eg: deadline return book /by 2020-12-12 23:59, the time is optional
+ */
 public class DeadlineCommand extends Commands {
 
     String input;
@@ -26,9 +30,11 @@ public class DeadlineCommand extends Commands {
             System.out.println("\n" + line);
         } catch (DateTimeParseException e) {
             System.out.println("Incorrect date and time format. Please enter in (yyyy-mm-dd HH:mm) format");
+            System.out.println("\n" + line);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Incorrect format for deadline. Please use the following format eg:" +
                     "deadline borrow book /by 2020-12-12 ");
+            System.out.println("\n" + line);
         }
     }
 }

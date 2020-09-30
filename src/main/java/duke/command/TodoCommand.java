@@ -2,6 +2,9 @@ package duke.command;
 
 import duke.task.Todo;
 
+/**
+ * Add todo Task into the task list.
+ */
 public class TodoCommand extends Commands {
 
     public final String input;
@@ -24,6 +27,7 @@ public class TodoCommand extends Commands {
             System.out.println("\n" + line);
         } catch (NullPointerException e) {
             System.out.println("An error occurred");
+            System.out.println("\n" + line);
         }
     }
 
