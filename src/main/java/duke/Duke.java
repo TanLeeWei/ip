@@ -5,7 +5,6 @@ import duke.task.TaskList;
 import duke.storage.StorageFile;
 import duke.ui.Ui;
 
-
 public class Duke {
     static final String line = "____________________________________________________________";
     private static TaskList tasksList = new TaskList();
