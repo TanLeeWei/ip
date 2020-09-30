@@ -2,6 +2,9 @@ package duke.command;
 
 import duke.task.Task;
 
+/**
+ * Display all the tasks in the Task List
+ */
 public class ListCommand extends Commands {
 
     public final String line;

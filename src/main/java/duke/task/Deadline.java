@@ -8,6 +8,9 @@ import java.time.format.DateTimeFormatter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Represent a deadline task in the Task List
+ */
 public class Deadline extends Task {
 
     protected String by;
@@ -19,6 +22,9 @@ public class Deadline extends Task {
         super.typeOfTask = "[D]";
     }
 
+    /**
+     * Set the date and time of the deadline
+     */
     public void setBy(String description) {
         String[] arrOfStr = description.split("/", 2);
         by = arrOfStr[1];
@@ -28,6 +34,11 @@ public class Deadline extends Task {
         by = arrOfStr[0] + ": " + date;
     }
 
+    /**
+     * Convert the date into Month in words , day , year format and the time into 12 hour clock format
+     * @param dateAndTime the date and time given by the user input
+     * @return the converted date and time
+     */
     public String convertDateAndTime(String dateAndTime)  {
         String[] splitString = dateAndTime.split(" ", 2);
         if(splitString.length == 1) {
@@ -53,10 +64,6 @@ public class Deadline extends Task {
 
     public void assignBy(String newBy) {
         by = newBy;
-    }
-
-    public String getBy() {
-        return by;
     }
 
     public String toString() {

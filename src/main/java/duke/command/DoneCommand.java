@@ -1,5 +1,8 @@
 package duke.command;
 
+/**
+ * Delete a task from the Task List
+ */
 public class DoneCommand extends Commands{
     int textNumber;
     String input;
@@ -20,6 +23,7 @@ public class DoneCommand extends Commands{
             System.out.println("\n" + line);
         } catch (IndexOutOfBoundsException e) {
             System.out.println("The index cannot be found. Please check the list and try again");
+            System.out.println("\n" + line);
         }
     }
 

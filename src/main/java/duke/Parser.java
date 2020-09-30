@@ -1,9 +1,13 @@
 package duke;
 
 import duke.command.*;
-import duke.exceptions.InvalidCommandException;
 
+
+/**
+ * Parses user inputs.
+ */
 public class Parser {
+
     public final String input;
     static final String line = "____________________________________________________________";
 
@@ -11,6 +15,11 @@ public class Parser {
         this.input = input;
     }
 
+    /**
+     * Parses user inputs into different commands and allow the program to execute different commands
+     * @param input user input command string
+     * @return command to execute base on user input
+     */
     public static Commands parseCommand(String input) {
         String[] splitString = input.trim().split(" ", 2);
         splitString[0] = splitString[0].trim();

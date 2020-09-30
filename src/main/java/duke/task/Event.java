@@ -1,7 +1,8 @@
 package duke.task;
 
-import duke.task.Task;
-
+/**
+ * Represent a event task in the Task List
+ */
 public class Event extends Task {
 
     protected String when;
@@ -11,6 +12,9 @@ public class Event extends Task {
         super.typeOfTask = "[E]";
     }
 
+    /**
+     * Set the time and date of the event
+     */
     public void setWhen(String description) {
         String[] arrayOfString = description.split("/", 2);
         when = arrayOfString[1];
@@ -21,10 +25,6 @@ public class Event extends Task {
 
     public void assignWhen(String newWhen) {
         when = newWhen;
-    }
-
-    public String getWhen() {
-        return when;
     }
 
     public String toString() {

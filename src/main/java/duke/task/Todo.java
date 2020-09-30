@@ -1,7 +1,8 @@
 package duke.task;
 
-import duke.task.Task;
-
+/**
+ * Represent a todo task in the Task List.
+ */
 public class Todo extends Task {
 
     public Todo(String description)  {
@@ -12,4 +13,5 @@ public class Todo extends Task {
     public String toString() {
         return super.getTypeOfTask() + "[" + super.getStatusIcon() + "] " + this.description;
     }
+
 }
