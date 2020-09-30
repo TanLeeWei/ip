@@ -27,7 +27,8 @@ public class EventCommand extends Commands {
             System.out.println("Now you have " + tasksList.getTaskListSize() + " tasks in the list.");
             System.out.println("\n" + line);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Incorrect format for event input");
+            System.out.println("Incorrect format for event input. Please follow the following format: e.g " +
+                    " event project meeting /at Sunday");
             System.out.println("\n" + line);
         }
     }

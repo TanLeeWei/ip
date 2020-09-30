@@ -52,9 +52,9 @@ Example Input: `done 2` <br>
 
 ### Find a task: `find`
 Find tasks by searching for a keyword and return all the tasks related to the keyword. <br>
-Format: `find INDEX` <br>
+Format: `find KEYWORD` <br>
 Tip: Check the list first for the index before using the find function. <br>
-Example Input: `find 2` <br>
+Example Input: `find book` <br>
 
 ### Exiting the program: `bye`
 Exits the program. <br>

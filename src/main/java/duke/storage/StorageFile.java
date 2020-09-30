@@ -86,11 +86,10 @@ public class StorageFile {
                 return;
             } else {
                 myObj.createNewFile();
-                System.out.println("File created");
             }
 
         } catch (IOException e){
-            System.out.println("An error occured");
+            System.out.println("An error occurred while creating file");
         }
     }
 
@@ -103,7 +102,7 @@ public class StorageFile {
             writer.print("");
             writer.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occured");
+            System.out.println("An error occurred while clearing file");
         }
     }
 
@@ -112,8 +111,8 @@ public class StorageFile {
      */
     public static void writeToFile() {
         try {
-            ClearFile(filePath);
             CreateFile(filePath);
+            ClearFile(filePath);
             FileWriter myWriter = new FileWriter(filePath);
             for (int i = 0; i < tasksList.getTaskListSize(); i++) {
                 if (tasksList.getTask(i).getDone() == true) {
