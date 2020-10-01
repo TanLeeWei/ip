@@ -1,4 +1,3 @@
-//Tan Lee Wei IP
 package duke;
 
 import duke.command.Commands;

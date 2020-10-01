@@ -4,9 +4,9 @@ package duke.command;
  * Delete a task from the Task List
  */
 public class DoneCommand extends Commands{
-    int textNumber;
-    String input;
-    String line;
+    public int textNumber;
+    public String input;
+    public String line;
 
     public DoneCommand(String input, String line) {
         this.input = input;

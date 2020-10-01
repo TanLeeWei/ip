@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.Scanner;
 
 /**
- * Represent thefile to store the Task data
+ * Represent the file to store the Task data
  */
 public class StorageFile {
 
@@ -106,9 +106,9 @@ public class StorageFile {
         }
     }
 
-    /**
-     * Save all the task into the file after each user input
-     */
+   /**
+    * Save all the task into the file after each user input
+    */
     public static void writeToFile() {
         try {
             CreateFile(filePath);
