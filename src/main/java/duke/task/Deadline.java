@@ -54,7 +54,7 @@ public class Deadline extends Task {
                 Date t1 = _24HourTime.parse(splitString[1]);
                 time = (_12HourTime.format(t1));
             } catch (final ParseException e) {
-                return "error";
+                return date + " " + splitString[1];
             }
             String dateTime =  date + " " + time;
             return dateTime;
