@@ -2,6 +2,11 @@
 
 Duke Project is an application that allows the user to record, manage and keep track the tasks they have. If you can type fast, Duke can help to make their tasks management more effectively and efficiently.
 
+## Contents
+1. [Quick Start] (## Quick Start)
+2. [Features] (## Features)
+3. [Command Summary] (## Command Summary)
+
 ## Quick Start
 1. Ensure that you have Java 11 or above version installed on your computer.
 
@@ -38,7 +43,7 @@ Format: `event description /date and time` <br>
 Example Input: `event project meeting /at Sunday 2-4` <br>
 Example Output: project meeting (at: Sunday 2-4) <br>
 
-### Deleting a task or all the task at once: `event`
+### Deleting a task or all the task at once: `delete`
 Delete a specific task from the task list or all the task at once. <br>
 Format: `delete INDEX` or `delete all` <br>
 Tip: Check the list for the index before using the delete function. <br>
@@ -62,3 +67,16 @@ Format: `bye` <br>
 
 ### Saving the data
 Duke data will be automatically saved after each command input given by the user. There is no need to save manually. <br>
+
+## Command Summary 
+
+| Function  | Format | Example Input |
+| --------- | ------ | ------- |
+| Todo | `todo description` | `todo homework` |
+| Deadline | `deadline description /date in YYYY-MM-DD format [time in 24hr format in HH:mm]` |
+| Event | `event description /at date and time` | `event project meeting /at Monday` | 
+| List | `list` | `list` |
+| Done | `done INDEX`| `done 2` |
+| Delete | `delete INDEX` | `delete 1` |
+| Find | `find KEYWORD` | `find homework` |
+| Bye | `bye` | `bye` |
