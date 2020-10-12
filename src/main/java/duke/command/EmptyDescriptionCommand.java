@@ -5,17 +5,17 @@ package duke.command;
  */
 public class EmptyDescriptionCommand extends Commands {
 
-    public final String line;
+    public final String LINE;
 
-    public EmptyDescriptionCommand(String line) {
-        this.line = line;
+    public EmptyDescriptionCommand(String LINE) {
+        this.LINE = LINE;
     }
 
     @Override
     public void execute() {
-        System.out.println(line);
-        System.out.println("The description cannot be empty!!");
-        System.out.println(line);
+        System.out.println(LINE);
+        System.out.println("The description or index cannot be empty!!");
+        System.out.println("\n" + LINE);
     }
 
 }

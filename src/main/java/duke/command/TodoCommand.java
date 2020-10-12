@@ -7,12 +7,12 @@ import duke.task.Todo;
  */
 public class TodoCommand extends Commands {
 
-    public final String input;
-    public final String line;
+    public String input;
+    public final String LINE;
 
-    public TodoCommand(String input, String line) {
+    public TodoCommand(String input, String LINE) {
         this.input = input;
-        this.line = line;
+        this.LINE = LINE;
     }
 
     @Override
@@ -20,14 +20,14 @@ public class TodoCommand extends Commands {
         try {
             Todo todo = new Todo(this.input);
             tasksList.addTask(todo);
-            System.out.println(line);
+            System.out.println(LINE);
             System.out.println("Got it. I've added this task");
             System.out.println(todo);
             System.out.println("Now you have " + tasksList.getTaskListSize() + " tasks in the list.");
-            System.out.println("\n" + line);
+            System.out.println("\n" + LINE);
         } catch (NullPointerException e) {
             System.out.println("An error occurred");
-            System.out.println("\n" + line);
+            System.out.println("\n" + LINE);
         }
     }
 

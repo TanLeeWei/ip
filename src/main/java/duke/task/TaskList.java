@@ -3,9 +3,10 @@ package duke.task;
 import java.util.ArrayList;
 
 public class TaskList {
+
     private static ArrayList<Task> tasksList;
 
-    public TaskList(){
+    public TaskList() {
         tasksList = new ArrayList<>();
     }
 
@@ -28,4 +29,5 @@ public class TaskList {
     public int getTaskListSize() {
         return tasksList.size();
     }
+
 }

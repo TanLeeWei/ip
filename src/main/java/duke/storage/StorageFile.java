@@ -5,7 +5,11 @@ import duke.task.Event;
 import duke.task.Todo;
 import duke.task.TaskList;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -13,29 +17,32 @@ import java.util.Scanner;
  */
 public class StorageFile {
 
-    /** Default file name if the user did not provide file name.*/
-    private static String filePath = "data/duke.txt";
+    /**
+     * Default file name if the user did not provide file name.
+     */
+    private static String FILE_PATH = "data/duke.txt";
 
+    public static String LINE;
     private static TaskList tasksList;
-    private static String line;
 
-    public StorageFile(String line, TaskList tasksList) {
-        this.line = line;
+    public StorageFile(String LINE, TaskList tasksList) {
+        this.LINE = LINE;
         this.tasksList = tasksList;
     }
 
     /**
      * Load the file when the user start the program
+     *
      * @return all the task from the previous usage
      */
-    public static TaskList readFile(){
-        try{
-            File myFile = new File(filePath);
+    public static TaskList readFile() {
+        try {
+            File myFile = new File(FILE_PATH);
             Scanner myReader = new Scanner(myFile);
             while (myReader.hasNextLine()) {
                 String file = myReader.nextLine();
                 String[] splitString = file.split(" ", 2);
-                if (file.contains("[T]")){
+                if (file.contains("[T]")) {
                     Todo todo = new Todo(splitString[1]);
                     if (file.contains("[✓]")) {
                         todo.markAsDone();
@@ -45,10 +52,10 @@ public class StorageFile {
                     int start = splitString[1].indexOf("(") + 1;
                     int end = splitString[1].indexOf(")");
                     String by = splitString[1].substring(start, end);
-                    String text = splitString[1].substring(0 , start - 1);
+                    String text = splitString[1].substring(0, start - 1);
                     Deadline deadline = new Deadline(text);
                     deadline.assignBy(by);
-                    if(file.contains("[✓]")) {
+                    if (file.contains("[✓]")) {
                         deadline.markAsDone();
                     }
                     tasksList.addTask(deadline);
@@ -56,10 +63,10 @@ public class StorageFile {
                     int start = splitString[1].indexOf("(") + 1;
                     int end = splitString[1].indexOf(")");
                     String when = splitString[1].substring(start, end);
-                    String text = splitString[1].substring(0 , start - 1);
+                    String text = splitString[1].substring(0, start - 1);
                     Event event = new Event(text);
                     event.assignWhen(when);
-                    if(file.contains("[✓]")) {
+                    if (file.contains("[✓]")) {
                         event.markAsDone();
                     }
                     tasksList.addTask(event);
@@ -68,7 +75,7 @@ public class StorageFile {
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("File Does not Exist. Nothing will be loaded");
-            System.out.println(line);
+            System.out.println(LINE);
         }
         return tasksList;
     }
@@ -82,13 +89,13 @@ public class StorageFile {
             if (!myObj.getParentFile().exists()) {
                 myObj.getParentFile().mkdirs();
             }
-            if (myObj.exists()){
+            if (myObj.exists()) {
                 return;
             } else {
                 myObj.createNewFile();
             }
 
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println("An error occurred while creating file");
         }
     }
@@ -106,14 +113,14 @@ public class StorageFile {
         }
     }
 
-   /**
-    * Save all the task into the file after each user input
-    */
+    /**
+     * Save all the task into the file after each user input
+     */
     public static void writeToFile() {
         try {
-            CreateFile(filePath);
-            ClearFile(filePath);
-            FileWriter myWriter = new FileWriter(filePath);
+            CreateFile(FILE_PATH);
+            ClearFile(FILE_PATH);
+            FileWriter myWriter = new FileWriter(FILE_PATH);
             for (int i = 0; i < tasksList.getTaskListSize(); i++) {
                 if (tasksList.getTask(i).getDone() == true) {
                     myWriter.write(tasksList.getTask(i).toString() + "\n");

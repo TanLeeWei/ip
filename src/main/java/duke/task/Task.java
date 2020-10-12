@@ -8,7 +8,7 @@ public class Task {
     protected boolean isDone;
     protected String typeOfTask;
 
-    public Task(String description){
+    public Task(String description) {
         this.description = description;
         this.isDone = false;
     }
@@ -29,6 +29,7 @@ public class Task {
         return isDone;
     }
 
+    @Override
     public String toString() {
         return this.description;
     }

@@ -1,6 +1,8 @@
 package duke.command;
 
+import duke.exceptions.EmptyDescriptionException;
 import duke.task.Deadline;
+
 import java.time.format.DateTimeParseException;
 
 /**
@@ -9,12 +11,12 @@ import java.time.format.DateTimeParseException;
  */
 public class DeadlineCommand extends Commands {
 
-    String input;
-    String line;
+    public String input;
+    public final String LINE;
 
-    public DeadlineCommand(String input, String line) {
+    public DeadlineCommand(String input, String LINE) {
         this.input = input;
-        this.line = line;
+        this.LINE = LINE;
     }
 
     @Override
@@ -23,18 +25,22 @@ public class DeadlineCommand extends Commands {
             Deadline deadline = new Deadline(input);
             deadline.setBy(input);
             tasksList.addTask(deadline);
-            System.out.println(line);
+            System.out.println(LINE);
             System.out.println("Got it. I've added this task");
             System.out.println(deadline);
             System.out.println("Now you have " + tasksList.getTaskListSize() + " tasks in the list.");
-            System.out.println("\n" + line);
+            System.out.println("\n" + LINE);
         } catch (DateTimeParseException e) {
             System.out.println("Incorrect date and time format. Please enter in (yyyy-mm-dd HH:mm) format");
-            System.out.println("\n" + line);
+            System.out.println("\n" + LINE);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Incorrect format for deadline. Please use the following format eg:" +
                     "deadline borrow book /by 2020-12-12 ");
-            System.out.println("\n" + line);
+            System.out.println("\n" + LINE);
+        } catch (EmptyDescriptionException e) {
+            System.out.println("Description cannot be empty!!");
+            System.out.println("\n" + LINE);
         }
     }
+
 }

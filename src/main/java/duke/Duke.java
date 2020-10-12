@@ -11,9 +11,9 @@ import duke.ui.Ui;
  */
 public class Duke {
 
-    static final String line = "____________________________________________________________";
+    public final String LINE = "____________________________________________________________";
     private static TaskList tasksList = new TaskList();
-    private StorageFile storage = new StorageFile(line, tasksList);
+    private StorageFile storage = new StorageFile(LINE, tasksList);
     private Ui userInput = new Ui();
 
     public static void main(String[] args) {
@@ -39,7 +39,7 @@ public class Duke {
                 + "| |_| | |_| |   <  __/\n"
                 + "|____/ \\____|_|\\_\\___|\n";
         System.out.println("Hello from\n" + logo);
-        System.out.println(line);
+        System.out.println(LINE);
         this.tasksList = storage.readFile();
     }
 

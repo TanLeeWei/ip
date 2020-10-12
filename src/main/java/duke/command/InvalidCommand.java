@@ -3,19 +3,19 @@ package duke.command;
 /**
  * Return a error message when the user input is invalid
  */
-public class InvalidCommand extends Commands{
+public class InvalidCommand extends Commands {
 
-    public final String line;
+    public final String LINE;
 
-    public InvalidCommand(String line) {
-        this.line = line;
+    public InvalidCommand(String LINE) {
+        this.LINE = LINE;
     }
 
     @Override
     public void execute() {
-        System.out.println(line);
+        System.out.println(LINE);
         System.out.println("This command is invalid. Please try again");
-        System.out.println(line + "\n");
+        System.out.println(LINE + "\n");
     }
 
 }

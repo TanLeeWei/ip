@@ -7,16 +7,16 @@ import duke.task.Task;
  */
 public class ListCommand extends Commands {
 
-    public final String line;
+    public final String LINE;
 
-    public ListCommand (String line) {
-        this.line = line;
+    public ListCommand(String LINE) {
+        this.LINE = LINE;
     }
 
     @Override
     public void execute() {
         int index = 1;
-        System.out.println(line);
+        System.out.println(LINE);
         if (tasksList.getAllTasks().isEmpty()) {
             System.out.println("There is no task in your list. Please add some tasks");
         } else {
@@ -26,7 +26,7 @@ public class ListCommand extends Commands {
                 index++;
             }
         }
-        System.out.println(line);
+        System.out.println(LINE);
     }
 
 }

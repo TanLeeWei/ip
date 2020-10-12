@@ -5,11 +5,12 @@ package duke.task;
  */
 public class Todo extends Task {
 
-    public Todo(String description)  {
+    public Todo(String description) {
         super(description);
         super.typeOfTask = "[T]";
     }
 
+    @Override
     public String toString() {
         return super.getTypeOfTask() + "[" + super.getStatusIcon() + "] " + this.description;
     }
