@@ -83,9 +83,9 @@ public class StorageFile {
     /**
      * Create the file to store all the tasks
      */
-    public static void CreateFile(String filePath) {
+    public static void CreateFile() {
         try {
-            File myObj = new File(filePath);
+            File myObj = new File(FILE_PATH);
             if (!myObj.getParentFile().exists()) {
                 myObj.getParentFile().mkdirs();
             }
@@ -103,9 +103,9 @@ public class StorageFile {
     /**
      * Empty the file for saving purposes
      */
-    public static void ClearFile(String filePath) {
+    public static void ClearFile() {
         try {
-            PrintWriter writer = new PrintWriter(filePath);
+            PrintWriter writer = new PrintWriter(FILE_PATH);
             writer.print("");
             writer.close();
         } catch (FileNotFoundException e) {
@@ -118,8 +118,8 @@ public class StorageFile {
      */
     public static void writeToFile() {
         try {
-            CreateFile(FILE_PATH);
-            ClearFile(FILE_PATH);
+            CreateFile();
+            ClearFile();
             FileWriter myWriter = new FileWriter(FILE_PATH);
             for (int i = 0; i < tasksList.getTaskListSize(); i++) {
                 if (tasksList.getTask(i).getDone() == true) {

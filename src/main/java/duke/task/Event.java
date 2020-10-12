@@ -25,7 +25,7 @@ public class Event extends Task {
         when = descriptionString[1].trim();
         this.description = descriptionString[0].trim();
         descriptionString = when.split(" ", 2);
-        when = descriptionString[0] + ": " + descriptionString[1];
+        when = descriptionString[0].trim() + ": " + descriptionString[1].trim();
     }
 
     public void assignWhen(String newWhen) {
