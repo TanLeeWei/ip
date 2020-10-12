@@ -73,7 +73,7 @@ Duke data will be automatically saved after each command input given by the user
 | Function  | Format | Example Input |
 | --------- | ------ | ------- |
 | Todo | `todo description` | `todo homework` |
-| Deadline | `deadline description /date in YYYY-MM-DD format [time in 24hr format in HH:mm]` |
+| Deadline | `deadline description /date in YYYY-MM-DD format [time in 24hr format in HH:mm]` | `deadline homework /by 2020-10-20 23:59` |
 | Event | `event description /at date and time` | `event project meeting /at Monday` | 
 | List | `list` | `list` |
 | Done | `done INDEX`| `done 2` |
