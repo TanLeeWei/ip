@@ -3,9 +3,9 @@
 Duke Project is an application that allows the user to record, manage and keep track the tasks they have. If you can type fast, Duke can help to make their tasks management more effectively and efficiently.
 
 ## Contents
-1. [Quick Start](## Quick Start)
-2. [Features](## Features)
-3. [Command Summary](## Command Summary)
+1. [Quick Start](#Quick-Start)
+2. [Features](#Features)
+3. [Command Summary](#Command-Summary)
 
 ## Quick Start
 1. Ensure that you have Java 11 or above version installed on your computer.
