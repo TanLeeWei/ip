@@ -26,7 +26,7 @@ public class ListCommand extends Commands {
                 index++;
             }
         }
-        System.out.println(LINE);
+        System.out.println("\n" + LINE);
     }
 
 }

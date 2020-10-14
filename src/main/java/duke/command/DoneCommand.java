@@ -4,6 +4,7 @@ package duke.command;
  * Delete a task from the Task List
  */
 public class DoneCommand extends Commands {
+
     public int textNumber;
     public String input;
     public final String LINE;
@@ -13,10 +14,11 @@ public class DoneCommand extends Commands {
         this.LINE = LINE;
     }
 
+    @Override
     public void execute() {
         try {
             textNumber = Integer.parseInt(input) - 1;
-            if (tasksList.getTask(textNumber).getDone() == true) {
+            if (tasksList.getTask(textNumber).getDone()) {
                 System.out.println(LINE);
                 System.out.println("The task has already been marked as done!");
                 System.out.println("\n" + LINE);
@@ -28,7 +30,10 @@ public class DoneCommand extends Commands {
                 System.out.println("\n" + LINE);
             }
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("The index cannot be found. Please check the list and try again");
+            System.out.println("There is no task with this index. Please check the list and try again!");
+            System.out.println("\n" + LINE);
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a integer for the index!");
             System.out.println("\n" + LINE);
         }
     }

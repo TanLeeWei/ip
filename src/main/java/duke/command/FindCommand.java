@@ -28,7 +28,7 @@ public class FindCommand extends Commands {
         }
         System.out.println(LINE);
         if (matchingTask.isEmpty()) {
-            System.out.println("There are not matching tasks in your list");
+            System.out.println("There are not matching tasks in your list.");
         } else {
             System.out.println("Here are the matching tasks in your list:");
             for (Task t : matchingTask) {
@@ -36,7 +36,7 @@ public class FindCommand extends Commands {
                 index++;
             }
         }
-        System.out.println(LINE);
+        System.out.println("\n" + LINE);
     }
 
 }

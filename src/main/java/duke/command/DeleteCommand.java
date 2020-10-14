@@ -31,11 +31,11 @@ public class DeleteCommand extends Commands {
                 tasksList.removeTask(index);
             }
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("The index cannot be found. Please check the list and try again");
+            System.out.println("There is no task with this index. Please check the list and try again!");
             System.out.println("\n" + LINE);
 
         } catch (NumberFormatException e) {
-            System.out.println("The input has to be an integer or all");
+            System.out.println("The input has to be an integer or all!");
             System.out.println("\n" + LINE);
         }
     }

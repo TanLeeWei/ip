@@ -74,8 +74,8 @@ public class StorageFile {
             }
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("File Does not Exist. Nothing will be loaded");
-            System.out.println(LINE);
+            System.out.println("There is no load file. Nothing will be loaded");
+            System.out.println("\n" + LINE);
         }
         return tasksList;
     }

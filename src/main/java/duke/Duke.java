@@ -57,7 +57,7 @@ public class Duke {
             command.setData(tasksList);
             command.execute();
             storage.writeToFile();
-        } while (!firstWord[0].trim().equals("bye"));
+        } while (!firstWord[0].trim().toLowerCase().equals("bye"));
     }
 
     /**

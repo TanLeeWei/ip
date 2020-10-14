@@ -11,6 +11,7 @@ public class ByeCommand extends Commands {
         this.LINE = LINE;
     }
 
+    @Override
     public void execute() {
         System.out.println(LINE);
         System.out.println("Bye. Hope to see you again soon!");

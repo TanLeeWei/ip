@@ -15,7 +15,7 @@ public class InvalidCommand extends Commands {
     public void execute() {
         System.out.println(LINE);
         System.out.println("This command is invalid. Please try again");
-        System.out.println(LINE + "\n");
+        System.out.println("\n" + LINE);
     }
 
 }
